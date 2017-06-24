@@ -1,0 +1,3 @@
+Q.manageDisplay = function() {
+  
+}

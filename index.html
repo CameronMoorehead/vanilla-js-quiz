@@ -4,22 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style.css">
   <title>Document</title>
 </head>
 <body>
   <h1>Vanilla JS Quiz</h1>
-  <div id="intro-cc">
+  <div class="content">
+    <div id="intro-cc" class="is-hidden">
+      <div id="intro-prompt">
+        <h2>Hello. What is your name?</h2>
+        <form>
+          <input type="text" id="nameInput"/>
+          <button type="submit" id="nameSubmit">SUBMIT</button>
+        </form>
+      </div>
 
+      <div id="intro-transition" class="is-hidden">
+        <!-- Dynamically insert transition text-->
+        <h2 id="intro-transition-text">This is pretty cool</h2>
+      </div>
+    </div>
+
+    <div id="quiz-cc" class="is-hidden">
+
+    </div>
+    <div id="outro-cc" class="is-hidden">
+
+    </div>
   </div>
-  <div id="quiz-cc">
 
-  </div>
-  <div id="outro-cc">
+  <script src="js/Q.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/displayManager.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/intro.js"></script>
+  <script src="js/outro.js"></script>
 
-  </div>
-
-  <script src="Q.js"></script>
-  <script>console.log(Q.test)</script>
+  <script src="js/main.js"></script>
+  <script>
+    // Data access test
+    console.log(Q.data[0])
+  </script>
+  <script>
+    /* Fade Transition demo code:
+    var intro = document.getElementById("intro-cc")
+    var intro1 = document.getElementById("intro-prompt")
+    var intro2 = document.getElementById("intro-transition")
+    Q.fadeIn(intro)
+    setTimeout(function(){Q.fadeTransition(intro1, intro2)}, 3000)
+    */
+  </script>
 </body>
 </html>
