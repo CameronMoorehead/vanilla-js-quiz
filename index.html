@@ -21,19 +21,20 @@
 
       <div id="intro-transition" class="is-hidden">
         <!-- Dynamically insert transition text-->
-        <h2 id="intro-transition-text">This is pretty cool</h2>
+        <h2 id="intro-transition-text"></h2>
       </div>
     </div>
 
     <div id="quiz-cc" class="is-hidden">
-
+      <h1>QUIZZ!</h1>
     </div>
     <div id="outro-cc" class="is-hidden">
-
+      <h2>Welcome back</h2>
     </div>
   </div>
 
   <script src="js/Q.js"></script>
+  <script src="js/domElements.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/displayManager.js"></script>
   <script src="js/data.js"></script>
@@ -42,17 +43,7 @@
 
   <script src="js/main.js"></script>
   <script>
-    // Data access test
-    console.log(Q.data[0])
-  </script>
-  <script>
-    /* Fade Transition demo code:
-    var intro = document.getElementById("intro-cc")
-    var intro1 = document.getElementById("intro-prompt")
-    var intro2 = document.getElementById("intro-transition")
-    Q.fadeIn(intro)
-    setTimeout(function(){Q.fadeTransition(intro1, intro2)}, 3000)
-    */
+    Q.manageDisplay()
   </script>
 </body>
 </html>
