@@ -45,7 +45,6 @@ Q.quizInit = function() {
       this.endQuiz()
     } else {
       this.currentQuestionIndex++
-      console.log(this.currentQuestionIndex)
     }
   }
   QuizModel.prototype.getCurrentQuestion = function() {

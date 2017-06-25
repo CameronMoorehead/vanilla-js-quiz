@@ -13,7 +13,7 @@ Q.createOutro = function() {
   Q.notUser.innerHTML = btnText
 }
 // Allows user to try quiz again. Loops back to intro animations
-Q.tryAgain.onclick = function(e) {
+Q.tryAgain.addEventListener("click", function(e) {
   // e.preventDefault()
   localStorage.setItem("score", 0)
 
@@ -27,16 +27,16 @@ Q.tryAgain.onclick = function(e) {
   Q.quizInit()
   // Fade in Quiz Content Container
   Q.fadeTransition(Q.introCC, Q.quizCC, 4000, 5000)
-}
+})
 
 /* Allows user to change username. Goes to outro transition
  * and then refreshes app state
 */
-Q.notUser.onclick = function(e) {
+Q.notUser.addEventListener("click", function(e) {
   // e.preventDefault()
   localStorage.clear()
   Q.fadeTransition(Q.outroPrompt, Q.outroTransition, 0, 1250)
   setTimeout(function() {
     location.reload()
   }, 5000)
-}
+})

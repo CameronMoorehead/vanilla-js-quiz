@@ -65,7 +65,7 @@ input[type="text"] {
   font-size: 16px;
   margin-bottom: 5px;
 }
-.blue-btn:hover {
+.blue-btn {
   cursor: pointer;
 }
 .orange-btn {
@@ -79,6 +79,6 @@ input[type="text"] {
   display: inline-block;
   font-size: 16px;
 }
-.orange-btn:hover {
+.orange-btn {
   cursor: pointer;
 }
