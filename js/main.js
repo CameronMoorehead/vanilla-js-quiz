@@ -96,6 +96,9 @@ Q.quizInit = function() {
     return this.currentAnswer
   }
 
+  /* Setup controller to have access to/knowledge of
+   * QuizModel and QuizView
+  */
   function QuizController(quizData) {
     this.quizModel = new QuizModel(quizData)
     this.quizView = new QuizView(this)

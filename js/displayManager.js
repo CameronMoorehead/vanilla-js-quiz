@@ -4,7 +4,7 @@
  * is displayed instead.
 */
 Q.manageDisplay = function() {
-  if (Q.username === null && Q.score === null) {
+  if (Q.username === null) {
     Q.fadeIn(Q.introCC)
   } else {
     Q.createOutro()
