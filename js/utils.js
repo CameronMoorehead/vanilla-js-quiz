@@ -27,7 +27,7 @@ Q.fadeTransition = function(outElement, inElement, delayOut, delayIn) {
 
 // Fades element out
 Q.fadeOut = function(el) {
-  el.style.opactity = 1;
+  el.style.opacity = 1;
   (function fade() {
     if ((el.style.opacity -= .025) < 0) {
       el.style.display = "none"

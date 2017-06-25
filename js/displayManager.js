@@ -4,10 +4,10 @@
  * is displayed instead.
 */
 Q.manageDisplay = function() {
-  Q.fadeIn(Q.introCC)
-  // if (Q.username === null) {
-  //   Q.fadeIn(Q.introCC)
-  // } else {
-  //   Q.fadeIn(Q.outroCC)
-  // }
+  if (Q.username === null && Q.score === null) {
+    Q.fadeIn(Q.introCC)
+  } else {
+    Q.createOutro()
+    Q.fadeIn(Q.outroCC)
+  }
 }

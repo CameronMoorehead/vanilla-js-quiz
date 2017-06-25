@@ -10,9 +10,9 @@ Q.nameSubmit.onclick = function(e) {
   var transitionText = Q.getTransitionText()
 
   // Fades intro to transition text
-  Q.fadeTransition(Q.introPrompt, Q.introTransition)
+  Q.fadeTransition(Q.introPrompt, Q.introTransition, 0, 1250)
   // Fades introCC and starts quiz
-  Q.fadeTransition(Q.introCC, Q.quizCC, 3000, 4000)
+  Q.fadeTransition(Q.introCC, Q.quizCC, 4000, 5000)
 }
 
 Q.getTransitionText = function() {
