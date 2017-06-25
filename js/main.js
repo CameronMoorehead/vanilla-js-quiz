@@ -1,17 +1,27 @@
+/* Start quiz by calling Q.quizInit, which contains 4 constructor functions
+ * which dicate the logic of the quiz.
+*/
 Q.quizInit = function() {
 
-  // Model
+  // Constructor for quiz question objects
   function QuizQuestion(questionData) {
     this.question = questionData.question
     this.answers = questionData.answers
     this.correctAnswer = questionData.correctAnswer
   }
 
+  /* Holds scores, an array of the quiz question objects,
+   * init's localStorage and sets up quiz data for consumption by
+   * QuizController
+  */
   function QuizModel(quizData) {
     this.score = 0
     this.questionArray = []
     this.quizQuestions = this.createQuestions(quizData)
     this.currentQuestionIndex = null
+    // Done here in case user refreshes pag during quiz to avoid null's
+    localStorage.setItem(Q.SCORE_KEY, this.score)
+    localStorage.setItem(Q.POSSIBLE_SCORE_KEY, this.quizQuestions.length)
   }
   QuizModel.prototype.createQuestions = function(quizData) {
     quizData.forEach(function(questionData) {
@@ -25,6 +35,9 @@ Q.quizInit = function() {
       this.score++
     }
   }
+  /* If the quiz has not yet started, change index to 0 from null,
+   * otherwise controller cannot start the quiz logic itself
+  */
   QuizModel.prototype.modelNextQuestion = function() {
     if (this.currentQuestionIndex === null) {
       this.currentQuestionIndex = 0
@@ -40,17 +53,17 @@ Q.quizInit = function() {
   }
   QuizModel.prototype.endQuiz = function() {
     localStorage.setItem(Q.SCORE_KEY, this.score)
-    localStorage.setItem(Q.POSSIBLE_SCORE_KEY, this.quizQuestions.length)
     Q.createOutro()
+    // Transition from quiz to outro
     Q.fadeTransition(Q.quizCC, Q.outroCC, 0, 1250)
   }
 
-  // View
   function QuizView(quizController) {
     this.quizController = quizController
     this.currentAnswer = null
     this.answerLogic()
   }
+  // Uses null object for form validation (user checks radio button)
   QuizView.prototype.answerLogic = function() {
     Q.nextQuestionButton.onclick = function(e) {
       e.preventDefault()
@@ -83,7 +96,6 @@ Q.quizInit = function() {
     return this.currentAnswer
   }
 
-  // Controller
   function QuizController(quizData) {
     this.quizModel = new QuizModel(quizData)
     this.quizView = new QuizView(this)
@@ -97,6 +109,7 @@ Q.quizInit = function() {
     this.quizModel.checkAnswer(answer)
   }
 
-  var test = new QuizController(Q.data)
+  // Start quiz
+  var main = new QuizController(Q.data)
 
 }

@@ -28,10 +28,9 @@ h1 {
 #intro-cc,
 #outro-cc,
 #quiz-cc {
-  width: 50%;
+  width: 80%;
   height: auto;
   margin: 0 auto;
   padding: 2em;
   position: relative;
-  border: 1px solid black;
 }

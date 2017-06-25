@@ -23,4 +23,7 @@ Q.POSSIBLE_SCORE_KEY = "possibleScore"
 // Outro CacheDom
 Q.outroCC = document.getElementById("outro-cc")
 Q.outroText = document.getElementById("outro-text")
-Q.outroTransition = document.getElementById("outroTransition")
+Q.outroPrompt = document.getElementById("outro-prompt")
+Q.outroTransition = document.getElementById("outro-transition")
+Q.tryAgain = document.getElementById("try-again")
+Q.notUser = document.getElementById("not-user")

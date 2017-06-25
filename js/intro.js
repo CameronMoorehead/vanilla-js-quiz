@@ -19,5 +19,4 @@ Q.getTransitionText = function() {
   var username = localStorage.getItem(Q.USERNAME_KEY)
   var text = "Okay " + username + ". Here is your quiz"
   Q.introTransitionText.innerHTML = text
-  return Q.introTransitionText
 }
