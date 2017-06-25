@@ -1,26 +1,21 @@
-/* Provide element to fade out and an element to fade in
- * Also provides delay, if you want to delay the element being
- * faded in
+/* Provide element to fade out and an element to fade in.
+ * Also provides delayOut and delayIn for timing animations
 */
 Q.fadeTransition = function(outElement, inElement, delayOut, delayIn) {
   if (!delayOut && !delayIn) {
     Q.fadeOut(outElement)
     Q.fadeIn(inElement)
-    console.log("no, no")
   } else if (!delayOut && delayIn) {
-    console.log("no, yes")
     Q.fadeOut(outElement)
     setTimeout(function() {
       Q.fadeIn(inElement)
     }, delayIn)
   } else if (delayOut && !delayIn) {
-    console.log("yes, no")
     setTimeout(function() {
       Q.fadeOut(outElement)
     }, delayOut)
     Q.fadeIn(inElement)
   } else {
-    console.log("yes, yes")
     setTimeout(function() {
       Q.fadeOut(outElement)
     }, delayOut)

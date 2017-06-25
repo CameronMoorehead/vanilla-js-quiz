@@ -15,7 +15,7 @@
         <h2>Hello. What is your name?</h2>
         <form>
           <input type="text" id="nameInput"/>
-          <button type="submit" id="nameSubmit">SUBMIT</button>
+          <button type="submit" id="nameSubmit" class="blue-btn">SUBMIT</button>
         </form>
       </div>
 
@@ -25,11 +25,30 @@
       </div>
     </div>
 
-    <div id="quiz-cc" class="is-hidden">
-      <h1>QUIZZ!</h1>
-    </div>
+    <form id="quiz-cc" class="is-hidden">
+      <div id="quiz-question-cc">
+        <h2 id="quiz-question"></h2>
+        <div id="quiz-answers"></div>
+      </div>
+      <button type="submit" id="next-question-btn">Next</button>
+    </form>
+
     <div id="outro-cc" class="is-hidden">
-      <h2>Welcome back</h2>
+      <div id="outro-prompt">
+        <!-- Dynamically insert outro text-->
+        <h2 id="outro-text">
+          $USER. You scored X out of Y on your quiz.
+          Would you like to try again?
+        </h2>
+        <button type="button" class="blue-btn">Try Again</button>
+        <button type="button" id="orange-btn">I'm Not $User</button>
+      </div>
+      <div id="outro-transition" class="is-hidden">
+        <h2>
+          I apologize. To me, all humans are similar in form. I am only
+          as clever as I was created to be.
+        </h2>
+      </div>
     </div>
   </div>
 
@@ -44,6 +63,7 @@
   <script src="js/main.js"></script>
   <script>
     Q.manageDisplay()
+    Q.quizInit()
   </script>
 </body>
 </html>

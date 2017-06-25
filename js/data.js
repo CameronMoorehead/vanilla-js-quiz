@@ -11,7 +11,7 @@ Q.data = [
     correctAnswer: 0
   },
   {
-    question: "Who created the JavaScript Language?",
+    question: "Who created the JavaScript language?",
     answers: [
       "Bjarne Stroustrup",
       "Guy Steele",

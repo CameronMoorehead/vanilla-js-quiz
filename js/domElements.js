@@ -1,3 +1,4 @@
+// DOM elements and other globals, to cut down on vanilla-js verbosity
 Q.username = localStorage.getItem("username")
 Q.introCC = document.getElementById("intro-cc")
 Q.outroCC = document.getElementById("outro-cc")
