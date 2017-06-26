@@ -7,6 +7,7 @@ Q.introTransition = document.getElementById("intro-transition")
 Q.introTransitionText = document.getElementById("intro-transition-text")
 Q.nameInput = document.getElementById("nameInput")
 Q.nameSubmit = document.getElementById("nameSubmit")
+Q.usernameForm = document.getElementById("usernameForm")
 Q.username = localStorage.getItem("username")
 Q.USERNAME_KEY = "username"
 

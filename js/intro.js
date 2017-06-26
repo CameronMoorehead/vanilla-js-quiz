@@ -2,7 +2,7 @@
  * Stores a username in localStorage and provides a
  * smooth transition to the quiz-cc
 */
-Q.nameSubmit.addEventListener("click", function(e) {
+Q.usernameForm.addEventListener("submit", function(e) {
   e.preventDefault()
   localStorage.setItem(Q.USERNAME_KEY, Q.nameInput.value)
   Q.nameInput.value = ""
